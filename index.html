@@ -50,6 +50,55 @@
 		<script>
 			$(function() {
 				//$('a').css('color','red');
+				// Dissimuler les réponses aux questions ;
+				$('.reponse').hide();
+				
+				// Mettre en forme les éléments affichés sur l'écran ;
+				$('.question').css('border','2px solid black').css('margin','20px').css('background-color','#9eeae0');
+				// $('.question').css('background-color','#9eeae0')//.css('border','1px solid black');
+				/*
+				var deplacement = $('.question').offset();
+				deplacement.top = 20;
+				deplacement.left = 20;
+				$('.question').offset(deplacement);
+				*/
+				//$('.question!="15"').
+				//
+
+				// Réagir au survol du lien « Tester les réponses » en affichant, pour chaque question :
+				//$('.reponse').show('a');
+				$('a').hover(
+					function() {
+						// Les instructions à exécuter au survol du lien
+						//1$('.reponse').show('a');
+						$('[src$="on.png"]').hide('a');
+					},
+					function() {
+						// Les instructions à exécuter lorsque le lien n'est plune suvolé
+						//1$('.reponse').hide('a');
+						//$('[src$="on.png"]').show('a');
+						$('[src$="on.png"]').hide('a');
+						}
+					);
+
+				/*if (#r1 === true) {
+					$('[src$="ai.png"]').show('a');
+				}*/
+
+				// L'icône bon.png si la réponse est bonne ou l'icône mauvais.png si la réponse est mauvaise.
+				$('a').hover(
+					function() {
+						
+						var imag = $('<img src="image/vrai.png">').insertAfter($('#reponse1'));
+					},
+					function() {
+						//$('.reponse').hide('<img src="image/vrai.png">');
+						//$('<img src="image/vrai.png">').hide('#reponse1');
+						//$('<img src="image/vrai.png">').insertAfter($('#reponse1'));
+						//$('img src="image/vrai.png"').remove('img src="image/vrai.png"');
+					}
+					);
+				// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
 			})
 		</script>
 	</body>
