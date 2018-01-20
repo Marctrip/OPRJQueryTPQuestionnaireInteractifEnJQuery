@@ -12,9 +12,9 @@
 			<div class="question">
 				<div class="texte">
 					<h2>Question 1</h2>
-					Le code jQuery S'exécute :<br />
+					Le code jQuery s'exécute :<br />
 					<input type="radio" id="r1" name="q1">Dans le navigateur<br />
-					<input type="radio" id="r2" name="q1">Sur le serveir où est stoké le code<br />
+					<input type="radio" id="r2" name="q1">Sur le serveur où est stocké le code<br />
 					<input type="radio" id="r3" name="q1">Tantôt dans le navigateur, tantôt sur le serveur<br />
 					<br /><span class="reponse" id="reponse1">Le code jQuery n'est autre que du JavaScript. A ce titre, il s'exécute toujours sur les clients (ordinateurs, tablettes et télépone) qui font référence à ce code via une page HTML. La bonne réponse est donc la première.</span>
 				</div>
@@ -24,7 +24,7 @@
 			<div class="question">
 				<div class="texte">
 					<h2>Question 2</h2>
-					Lorsque l'on veut exécuterdu code jQuery, attendre la disponibilité du DOM est :<br />
+					Lorsque l'on veut exécuter du code jQuery, attendre la disponibilité du DOM est :<br />
 					<input type="radio" id="r4" name="q2">Vital<br />
 					<input type="radio" id="r5" name="q2">Inutile<br />
 					<input type="radio" id="r6" name="q2">Parfois important, parfois sans importance.<br />
@@ -40,7 +40,7 @@
 					<input type="radio" id="r7" name="q3">Il faut les mettre l'une à la suite de l'autre en les séparant par une virgule<br />
 					<input type="radio" id="r8" name="q3">Il faut les mettre à la suite de l'autre en les séparant par un point décimale<br />
 					<input type="radio" id="r9" name="q3">Il ets impossible de chaîner deux méthodes jQuery<br />
-					<br /><span class="reponse" id="reonses3">L'exécution d'un sélecteur jQuery produit un objet jQuery sur lequel il est possible d'appliquer une méthode jQuery. Cette méthode produit elle-même un objet jQuery. Il est donc possible de lui apliquer une autre méthode en utilisant le caractère de liaison habituel : le point décimal.</span>
+					<br /><span class="reponse" id="reponse3">L'exécution d'un sélecteur jQuery produit un objet jQuery sur lequel il est possible d'appliquer une méthode jQuery. Cette méthode produit elle-même un objet jQuery. Il est donc possible de lui apliquer une autre méthode en utilisant le caractère de liaison habituel : le point décimal.</span>
 				</div>
 				<img id="img3" src="image/interrogation.png" />
 			</div>
@@ -85,11 +85,43 @@
 					$('[src$="ai.png"]').show('a');
 				}*/
 
-				// L'icône bon.png si la réponse est bonne ou l'icône mauvais.png si la réponse est mauvaise.
+				// TODO L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 				$('a').hover(
 					function() {
+						//$('a').add('<img src="image/vrai.png">');
+						// Question 1
+						if ($(':radio#r1:checked').val()) {
+						$('<img src="image/vrai.png">').insertAfter($('#reponse1'));
 						
-						var imag = $('<img src="image/vrai.png">').insertAfter($('#reponse1'));
+						} else if ($(':radio#r2:checked').val()) {
+							$('<img src="image/faux.png">').insertAfter($('#reponse1'));
+						} else if ($(':radio#r3:checked').val()) {
+							$('<img src="image/faux.png">').insertAfter($('#reponse1'));
+						}
+
+						// Question 2
+						if ($(':radio#r4:checked').val()) {
+						$('<img src="image/vrai.png">').insertAfter($('#reponse2'));
+						} else if ($(':radio#r5:checked').val()) {
+							$('<img src="image/faux.png">').insertAfter($('#reponse2'));
+						} else if ($(':radio#r6:checked').val()) {
+							$('<img src="image/faux.png">').insertAfter($('#reponse2'));
+						}
+
+						// Question 3
+						if ($(':radio#r7:checked').val()) {
+						$('<img src="image/faux.png">').insertAfter($('#reponse3'));
+						} else if ($(':radio#r8:checked').val()) {
+							$('<img src="image/vrai.png">').insertAfter($('#reponse3'));
+						} else if ($(':radio#r9:checked').val()) {
+							$('<img src="image/faux.png">').insertAfter($('#reponse3'));
+						}
+
+						/*$(':radio').val('#r1').alert('Hello world !');*/
+						/*
+						for (var = imag; imag <= 1; imag++) {
+
+						}*/
 					},
 					function() {
 						//$('.reponse').hide('<img src="image/vrai.png">');
@@ -98,7 +130,7 @@
 						//$('img src="image/vrai.png"').remove('img src="image/vrai.png"');
 					}
 					);
-				// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+				// TODO Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
 			})
 		</script>
 	</body>
