@@ -51,8 +51,9 @@
 			$(function() {
 				//$('a').css('color','red');
 				// Dissimuler les réponses aux questions ;
-				$('.reponse').hide();
-				
+				$('#reponse1').hide();
+				$('#reponse2').hide();
+				$('#reponse3').hide();
 				// Mettre en forme les éléments affichés sur l'écran ;
 				$('.question').css('border','2px solid black').css('margin','20px').css('background-color','#9eeae0');
 				// $('.question').css('background-color','#9eeae0')//.css('border','1px solid black');
@@ -81,56 +82,70 @@
 						}
 					);
 
-				/*if (#r1 === true) {
-					$('[src$="ai.png"]').show('a');
-				}*/
-
-				// TODO L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
+				// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 				$('a').hover(
 					function() {
 						//$('a').add('<img src="image/vrai.png">');
 						// Question 1
 						if ($(':radio#r1:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 						$('<img src="image/vrai.png">').insertAfter($('#reponse1'));
-						
+						// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+						$('#reponse1').show().css('color','#0eb32d'); // appead write color green
 						} else if ($(':radio#r2:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/faux.png">').insertAfter($('#reponse1'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse1').show().css('color','#ff0000'); // appead write color red
 						} else if ($(':radio#r3:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/faux.png">').insertAfter($('#reponse1'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse1').show().css('color','#ff0000'); // appead write color red
 						}
 
 						// Question 2
 						if ($(':radio#r4:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 						$('<img src="image/vrai.png">').insertAfter($('#reponse2'));
+						// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+						$('#reponse2').show().css('color','#0eb32d'); // appead write color green
 						} else if ($(':radio#r5:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/faux.png">').insertAfter($('#reponse2'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse2').show().css('color','#ff0000'); // appead write color red
 						} else if ($(':radio#r6:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/faux.png">').insertAfter($('#reponse2'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse2').show().css('color','#ff0000'); // appead write color red
 						}
 
 						// Question 3
 						if ($(':radio#r7:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 						$('<img src="image/faux.png">').insertAfter($('#reponse3'));
+						// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+						$('#reponse3').show().css('color','#ff0000'); // appead write color red
 						} else if ($(':radio#r8:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/vrai.png">').insertAfter($('#reponse3'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse3').show().css('color','#0eb32d'); // appead write color green
 						} else if ($(':radio#r9:checked').val()) {
+							// L'icône vrai.png si la réponse est bonne ou l'icône faux.png si la réponse est mauvaise.
 							$('<img src="image/faux.png">').insertAfter($('#reponse3'));
+							// Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+							$('#reponse3').show().css('color','#ff0000'); // appead write color red
 						}
 
-						/*$(':radio').val('#r1').alert('Hello world !');*/
-						/*
-						for (var = imag; imag <= 1; imag++) {
-
-						}*/
 					},
 					function() {
-						//$('.reponse').hide('<img src="image/vrai.png">');
-						//$('<img src="image/vrai.png">').hide('#reponse1');
-						//$('<img src="image/vrai.png">').insertAfter($('#reponse1'));
-						//$('img src="image/vrai.png"').remove('img src="image/vrai.png"');
+						
 					}
 					);
-				// TODO Le texte explicatif en vert si la réponse est bonne ou en rouge si elle est mauvaise.
+				
 			})
 		</script>
 	</body>
